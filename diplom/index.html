@@ -9,16 +9,29 @@
 <body>
     <div class="categoryes">
         <div class="categoryes__wrapper">
-            <form action="#">
+            <form>
                 <input class="js-category input" type="text" placeholder="Please, enter name category">
                 <input class="js-add-category button" type="submit" value="Add">
             </form>
         </div>
-        <div class="categoryes__list">
+        <div class="categoryes__list"></div>
+    </div>
 
-        </div>
+    <div>
+        <button class="expenses button">Expenses</button>
+        <button class="income button">Income</button>
+    </div>
+    <div class="operation">
+        <form class="operation__form operation__form--hidden">
+            <input class="operation__sum input" type="number">
+            <select class="operation__category input"></select>
+            <input class="operation__date input" type="date">
+
+            <input class="js-add-operation button" type="submit">
+        </form>
     </div>
     <script src="js/variables.js"></script>
+    <script src="js/operation.js"></script>
     <script src="js/categoryes.js"></script>
     <script src="js/init.js"></script>
 </body>

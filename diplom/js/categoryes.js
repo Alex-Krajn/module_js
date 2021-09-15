@@ -47,6 +47,8 @@ function renderCategory () {
     categoryes.forEach(function(category) {
         listCategory.appendChild(templateItemCategory(category))
     })
+
+    renderExpensesCategoryes();
 }
 
 // Создание элемаента категории
@@ -60,11 +62,22 @@ function templateItemCategory(name){
 
     wrapperItem.appendChild(textItem);
 
+    let controlItem = document.createElement('div');
+    controlItem.className = 'categoryes__control';
+
     let renameItem = document.createElement('button');
     renameItem.className = 'categoryes__rename button';
     renameItem.textContent = 'Rename';
 
-    wrapperItem.appendChild(renameItem);
+    controlItem.appendChild(renameItem);
+
+    let deleteItem = document.createElement('button');
+    deleteItem.className = 'categoryes__delete button';
+    deleteItem.textContent = 'Delete';
+
+    controlItem.appendChild(deleteItem);
+
+    wrapperItem.appendChild(controlItem);
 
     return wrapperItem;
 }
@@ -73,8 +86,12 @@ function funcCategory(e){
     let target = e.target;
 
     if(target.classList.contains('categoryes__rename') && !statusEditCategory){
-        editCategory(target.parentElement)
+        editCategory(target.parentElement.parentElement)
         statusEditCategory = true;
+    }
+
+    if(target.classList.contains('categoryes__delete')){
+        deleteCategory(target.parentElement.parentElement)
     }
 }
 
@@ -111,4 +128,17 @@ function editCategory(parentElement){
 
         statusEditCategory = false;
     })
+}
+
+function deleteCategory(parentElement){
+    let pCategory = parentElement.querySelector('.categoryes__name');
+    let category = pCategory.textContent;
+
+    const permission = confirm(`Удалить категорию ${category}?`);
+
+    if(permission){
+        categoryes.splice(categoryes.indexOf(category), 1);
+
+        renderCategory();
+    }
 }

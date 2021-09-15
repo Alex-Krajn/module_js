@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+.button, .input{
+    padding: 5px 10px;
+    font-size: 18px;
+}
+
 .hidden {
     display: none;
     opacity: 0;
@@ -29,7 +34,25 @@
     font-size: 18px;
 }
 
-.button, .input{
-    padding: 5px 10px;
-    font-size: 18px;
+.categoryes__rename{
+    margin-right: 10px;
+}
+
+.operation{
+    margin-top: 30px;
+    padding-left: 30px;
+    max-width: 300px;
+}
+
+.operation__form{
+    display: flex;
+    flex-direction: column;
+}
+
+.operation__form--hidden{
+    display: none;
+}
+
+.operation__form .input{
+    margin-bottom: 10px;
 }
