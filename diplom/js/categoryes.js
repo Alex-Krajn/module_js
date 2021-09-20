@@ -49,6 +49,8 @@ function renderCategory () {
     })
 
     renderExpensesCategoryes();
+    renderTotalCategoryes('modal__category');
+    renderTotalCategoryes('filter-category');
 }
 
 // Создание элемаента категории

@@ -44,8 +44,7 @@ function addOperation(e){
     total.push(newOperation);
 
     clearForm();
-
-    console.log(total);
+    filterTotal();
 }
 
 function renderExpensesCategoryes(){

@@ -30,9 +30,72 @@
             <input class="js-add-operation button" type="submit">
         </form>
     </div>
+
+    <table class="total" border="1" cellspacing="0" cellpadding="5">
+        <thead class="total__head">
+            <tr>
+                <td class="total__cell">
+                    №
+                </td>
+                <td class="total__cell">
+                    Category
+                </td>
+                <td class="total__cell">
+                    Sum
+                </td>
+                <td class="total__cell">
+                    Date
+                </td>
+                <td class="total__cell">
+                    Operation
+                </td>
+                <td class="total__cell">
+                    Control
+                </td>
+            </tr>
+            <tr>
+                <td class="total__cell">
+                </td>
+                <td class="total__cell">
+                    <select class="filter-category"></select>
+                </td>
+                <td class="total__cell">
+                    <input class="filter-sum" type="text">
+                </td>
+                <td class="total__cell">
+                    <input class="filter-date" type="text">
+                </td>
+                <td class="total__cell">
+                    <select class="filter-operation">
+                        <option value="">All</option>
+                        <option value="expenses">Expenses</option>
+                        <option value="income">Income</option>
+                    </select>
+                </td>
+                <td class="total__cell">
+                </td>
+            </tr>
+        </thead>
+        <tbody class="total__body">
+
+        </tbody>
+    </table>
+
+    <div class="modal modal--hidden">
+        <form class="modal__form">
+            <input class="modal__sum input" type="number">
+            <select class="modal__category input"></select>
+            <input class="modal__date input" type="date">
+
+            <input class="js-edit-modal button" type="submit" value="Edit">
+            <input class="js-cancel-modal button" type="submit" value="Cancel">
+        </form>
+    </div>
+
     <script src="js/variables.js"></script>
     <script src="js/operation.js"></script>
     <script src="js/categoryes.js"></script>
+    <script src="js/total.js"></script>
     <script src="js/init.js"></script>
 </body>
 </html>
